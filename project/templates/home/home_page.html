@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+{% include "home/home_hero_section.html" %}
+<!-- END Hero Section -->
+
+<main id="main">
+
+  <!-- About Section -->
+  {% include "home/home_about_section.html" %}
+  <!-- END About Section -->
+
+  <!-- Work Section -->
+  {% include "home/home_work_section.html" %}
+  <!-- END Work Section -->
+
+  <!-- Contact Section -->
+  {% include "home/home_contact_section.html" %}
+  <!-- END Contact Section -->
+
+</main>
+{% endblock content %}

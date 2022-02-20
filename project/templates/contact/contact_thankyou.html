@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/contact/thankyou.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- ThankYou Page -->
+<section class="my-5">
+  <div class="page-header" style="min-height: 75vh;">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2 class="lh-1 ls-tight fw-900 mb-1" style="font-size: 2.75rem;">
+            Thank you!
+          </h2><br>
+          <p class="mt-1 pe-lg-5 me-lg-5 lead fw-normal text-muted">
+            Your message has been successfully sent. I'll contact you very soon!
+          </p><br>
+          <div class="buttons">
+            <a href="/" class="btn btn-outline-dark rounded-1">Go to Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END ThankYou Page -->
+{% endblock content %}.

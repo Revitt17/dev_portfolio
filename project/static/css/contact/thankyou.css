@@ -1,0 +1,15 @@
+/*--------------------------------------------------------------
+# ThankYou Page
+--------------------------------------------------------------*/
+    .page-header {
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      background-size: cover;
+      background-position: 50%;
+    }
+    .fw-900 {
+      font-weight: 900;
+    }

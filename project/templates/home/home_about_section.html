@@ -1,0 +1,92 @@
+{% load static wagtailimages_tags %}
+
+<!-- About Section -->
+<section id="about" class="about-mf sect-pt4 route">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="box-shadow-full">
+          <div class="row">
+            <div class="col-md-4 px-5">
+              <div class="pb-5">
+                {% image page.about_profile_image fill-1000x1500 as profile_image %}
+                <img src="{{ profile_image.url }}" class="img-fluid shadow-1-strong rounded-0" alt="">
+              </div>
+            </div>
+            <div class="col-md-8 ps-5">
+              <div class="about-me pt-4 pt-md-0">
+                <div class="title-box-2">
+                  <h5 class="title-left">
+                    {{ page.about_title }}
+                  </h5>
+                </div>
+                <p class="lead">
+                  {{ page.about_first_paragrapher }}
+                </p>
+                {% if page.about_second_paragrapher %}
+                <p class="lead">
+                  {{ page.about_second_paragrapher }}
+                </p>
+                {% endif %}
+                {% if page.about_third_paragrapher %}
+                <p class="lead">
+                  {{ page.about_third_paragrapher }}
+                </p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Skills SubSection -->
+  <div class="container py-5">
+    <div class="title-box-2 text-center">
+      <h5 class="title-center">
+        {{ page.about_title_skills_subsection }}
+      </h5>
+    </div>
+    <div class="customer-logos">
+      {% for logo in self.logos.all %}
+      {% image logo.image width-1920 as logo %}
+      <div>
+        <img src="{{logo.url}}" />
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <!-- END Skills SubSection -->
+</section>
+<!-- END About Section -->
+
+
+{% block extra_js %}
+<script type="text/javascript" src="{% static 'js/home/about_section/jquery3.6.0.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/home/about_section/slick-carousel1.6.0.js' %}"></script>
+<script>
+  // Skills carousel
+  $(document).ready(function () {
+    $('.customer-logos').slick({
+      slidesToShow: 6,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1000,
+      arrows: false,
+      dots: false,
+      pauseOnHover: false,
+      responsive: [{
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 5
+        }
+      }, {
+        breakpoint: 520,
+        settings: {
+          slidesToShow: 4
+        }
+      }]
+    });
+  });
+</script>
+{% endblock %}

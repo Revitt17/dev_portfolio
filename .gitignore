@@ -1,0 +1,37 @@
+# Python
+*.pyc
+*~
+__pycache__
+
+# Env
+venv/
+
+# Database
+db.sqlite3
+
+# Media
+media/
+
+# Settings
+project/settings/local.py
+project/settings/secret_key.py
+
+# Deployment
+deployment/
+
+# macOS
+._*
+.DS_Store
+.fseventsd
+.Spotlight-V100
+
+# Windows
+Thumbs.db*
+ehthumbs*.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Visual Studio
+.vscode/
+.history/
+*.code-workspace

@@ -1,0 +1,54 @@
+{% load static wagtailimages_tags %}
+
+<!-- Hero Section -->
+{% image page.hero_background_image fill-1600x800 as bg_img %}
+<div id="hero" class="hero route bg-image" style="background-image: url('{{ bg_img.url }}')">
+  <div class="overlay-itro"></div>
+  <div class="hero-content display-table">
+    <div class="table-cell">
+      <div class="container">
+        <h1 class="hero-title mb-4">{{ page.hero_lead_text }}</h1>
+        <p class="hero-subtitle"><span class="typed" data-typed-items="{{ page.hero_typed_text }}"></span></p>
+        <div class="social-links">
+          {% if page.hero_github_link %}
+          <a href="{{ page.hero_github_link }}"><i class="fab fa-github"></i></i></a>
+          {% endif %}
+          {% if page.hero_linkedin_link %}
+          <a href="{{ page.hero_linkedin_link }}"><i class="fab fa-linkedin"></i></i></a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END Hero Section -->
+
+{% block extra_js %}
+<script type="text/javascript" src="{% static 'js/home/hero_section/typed.min.js' %}"></script>
+<script>
+  (function () {
+    // Easy selector helper function
+    const select = (el, all = false) => {
+      el = el.trim()
+      if (all) {
+        return [...document.querySelectorAll(el)]
+      } else {
+        return document.querySelector(el)
+      }
+    }
+    // Type effect
+    const typed = select('.typed')
+    if (typed) {
+      let typed_strings = typed.getAttribute('data-typed-items')
+      typed_strings = typed_strings.split(',')
+      new Typed('.typed', {
+        strings: typed_strings,
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 50,
+        backDelay: 2000
+      });
+    }
+  })()
+</script>
+{% endblock %}

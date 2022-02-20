@@ -1,0 +1,58 @@
+{% load static wagtailcore_tags %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>
+    {% block title %}
+    {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
+    {% endblock %}
+    {% block title_suffix %}
+    {% wagtail_site as current_site %}
+    {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
+    {% endblock %}
+  </title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {# Global stylesheets #}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base/mdb.min.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base/base.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base/bootstrap-icons/bootstrap-icons.css' %}">
+
+  {% block extra_css %}
+  {% endblock %}
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+
+  <!-- NavBar -->
+  {% block navbar %}
+  {% include "base_include/navbar.html" %}
+  {% endblock %}
+  <!-- End NavBar -->
+
+  {% block content %}
+  <!--Content-->
+  {% endblock %}
+
+   <!-- Footer -->
+   {% block footer %}
+   {% include "base_include/footer.html" %}
+   {% endblock %}
+   <!-- End Footer -->
+
+  {# Global javascript #}
+  <script type="text/javascript" src="{% static 'js/base/mdb.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/base/base.js' %}"></script>
+
+  {% block extra_js %}
+  {% endblock %}
+</body>
+
+</html>

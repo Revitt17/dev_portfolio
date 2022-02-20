@@ -1,0 +1,55 @@
+{% load wagtailimages_tags wagtailcore_tags %}
+
+<!-- Project Info Section -->
+<section id="portfolio-details" class="portfolio-details mb-5">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-4">
+        <div class="card rounded-0">
+          <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
+            {% image page.cover_image_project fill-1600x800 as cover_img %}
+            <img src="{{ cover_img.url }}" class="img-fluid"/>
+            <a href="{{ page.project_url }}">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+          </div>
+          <div class="portfolio-info">
+            <h3>{{ page.project_info }}</h3>
+            <ul>
+              <li><strong>{{ page.category_title }}</strong>: {{ page.category }}</li>
+              {% if page.client_title %}
+              <li><strong>{{ page.client_title }}</strong>: {{ page.client }}</li>
+              {% endif %}
+              <li><strong>{{ page.project_date_title }}</strong>: {{ page.project_date }}</li>
+              {% if page.project_url_title %}
+              <li><strong>{{ page.project_url_title }}</strong>: <a href="{{ page.project_url }}">
+                {{ page.project_url }}</a></li>
+              {% endif %}
+            </ul>
+            <hr>
+            <div class="d-grid gap-2 d-md-block">
+              {% if page.website_button %}
+                <a href="{{ page.website_button_url }}" class="btn btn-outline-primary rounded-1 mb-1">
+                  {{ page.website_button }}</a>
+              {% endif %}
+              {% if page.github_button %}
+                <a href="{{ page.github_button_url }}" class="btn btn-outline-dark rounded-1 mb-1">
+                  {{ page.github_button }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card rounded-0">
+          <div class="card-body">
+            {% for block in page.body %}
+              {% include_block block %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END Project Info Section -->

@@ -1,0 +1,57 @@
+{% load wagtailimages_tags %}
+
+<!-- Work Section -->
+<section id="work" class="portfolio-mf sect-pt4 route pb-5 mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="title-box text-center">
+          <h3 class="title-a">
+            {{ page.work_title }}
+          </h3>
+          {% if page.work_lead_text %}
+          <p class="subtitle-a">
+            {{ page.work_lead_text }}
+          </p>
+          {% endif %}
+          <div class="line-mf"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      {% for project in portfolio %}
+      <div class="col-md-4">
+        <div class="work-box">
+          <div class="bg-image hover-zoom hover-overlay ripple">
+            {% image project.cover_image_project fill-1200x600 as bg %}
+            <img src="{{ bg.url }}" class="img-fluid" />
+            <a href="{{ project.url }}">
+              <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+                <div class="d-flex justify-content-center align-items-center h-100"></div>
+              </div>
+            </a>
+          </div>
+          <div class="work-content">
+            <div class="row">
+              <div class="col-md-8">
+                <h2 class="w-title">{{ project.title }}</h2>
+                <div class="w-more">
+                  <span class="w-date">{{ project.project_date }}</span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="w-like">
+                  <a href="{{ project.url }}"> <span><i class="far fa-plus-square"></i></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+<!-- End Work Section -->

@@ -1,0 +1,22 @@
+{% load wagtailimages_tags %}
+
+<!-- Banner Section -->
+<section>
+  {% image page.banner_image fill-1600x800 as bg_img %}
+  <div class="bg-image bg-fixed text-center" style="background-image:url('{{ bg_img.url }}'); height: 400px;">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.3);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <p class="display-6 mb-5">{{ page.title }}</p>
+          <ol class="breadcrumb d-flex justify-content-center">
+            <li class="breadcrumb-item">
+              <a href="/" class="text-white">{{ page.home_slug }}</a>
+            </li>
+            <li class="breadcrumb-item active text-white">{{ page.slug }}</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END Banner Section -->
