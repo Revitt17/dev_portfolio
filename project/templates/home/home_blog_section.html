@@ -1,0 +1,41 @@
+{% load wagtailimages_tags %}
+
+<!-- Blog Section -->
+<section id="blog" class="py-5 my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mb-5 text-center">
+          <h3 class="blog-title-a">BLOG</h3>
+          {% if page.work_lead_text %}
+          <p class="blog-subtitle-a"></p>
+          {% endif %}
+          <div class="blog-line-mf"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      {% for post in blog %}
+      <div class="col-lg-4 col-md-6">
+        <div class="card rounded-0 h-100">
+          <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="dark">
+            {% image post.post_image fill-1500x1000 as post_image %}
+            <img src="{{ post_image.url }}" class="img-fluid" />
+            <a href="{{ post.url }}">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }} </h5>
+            <p class="card-text">
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+<!-- End Blog Section -->

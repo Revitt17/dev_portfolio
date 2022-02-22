@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'site_settings',
     'contact',
     'streams',
+    'blog',
 
     # Add for use django models in admin
     'wagtail.contrib.modeladmin', 

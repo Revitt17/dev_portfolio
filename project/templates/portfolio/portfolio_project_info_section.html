@@ -8,33 +8,43 @@
         <div class="card rounded-0">
           <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
             {% image page.cover_image_project fill-1600x800 as cover_img %}
-            <img src="{{ cover_img.url }}" class="img-fluid"/>
+            <img src="{{ cover_img.url }}" class="img-fluid" />
             <a href="{{ page.project_url }}">
               <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
             </a>
           </div>
           <div class="portfolio-info">
-            <h3>{{ page.project_info }}</h3>
+            <h3>{{ settings.site_settings.PortfolioSettings.project_info }}</h3>
             <ul>
-              <li><strong>{{ page.category_title }}</strong>: {{ page.category }}</li>
-              {% if page.client_title %}
-              <li><strong>{{ page.client_title }}</strong>: {{ page.client }}</li>
+              <li>
+                <strong>{{ settings.site_settings.PortfolioSettings.project_info_category }}</strong>: {{ page.category }}
+              </li>
+              {% if settings.site_settings.PortfolioSettings.project_info_client %}
+              <li>
+                <strong>{{ settings.site_settings.PortfolioSettings.project_info_client }}</strong>: {{ page.client }}
+              </li>
               {% endif %}
-              <li><strong>{{ page.project_date_title }}</strong>: {{ page.project_date }}</li>
-              {% if page.project_url_title %}
-              <li><strong>{{ page.project_url_title }}</strong>: <a href="{{ page.project_url }}">
-                {{ page.project_url }}</a></li>
+              <li>
+                <strong>{{ settings.site_settings.PortfolioSettings.project_info_project_date }}</strong>: 
+                {{ page.project_date }}</li>
+              {% if settings.site_settings.PortfolioSettings.project_info_project_url %}
+              <li>
+                <strong>{{ settings.site_settings.PortfolioSettings.project_info_project_url }}</strong>: 
+                <a href="{{ page.project_url }}">{{ page.project_url }}</a>
+              </li>
               {% endif %}
             </ul>
             <hr>
             <div class="d-grid gap-2 d-md-block">
-              {% if page.website_button %}
-                <a href="{{ page.website_button_url }}" class="btn btn-outline-primary rounded-1 mb-1">
-                  {{ page.website_button }}</a>
+              {% if settings.site_settings.PortfolioSettings.project_info_website_button %}
+              <a href="{{ settings.site_settings.PortfolioSettings.project_info_website_button }}"
+                class="btn btn-outline-primary rounded-1 mb-1">
+                {{ page.website_button }}</a>
               {% endif %}
-              {% if page.github_button %}
-                <a href="{{ page.github_button_url }}" class="btn btn-outline-dark rounded-1 mb-1">
-                  {{ page.github_button }}</a>
+              {% if settings.site_settings.PortfolioSettings.project_info_github_button %}
+              <a href="{{ settings.site_settings.PortfolioSettings.project_info_github_button }}"
+                class="btn btn-outline-dark rounded-1 mb-1">
+                {{ page.github_button }}</a>
               {% endif %}
             </div>
           </div>
@@ -44,7 +54,7 @@
         <div class="card rounded-0">
           <div class="card-body">
             {% for block in page.body %}
-              {% include_block block %}
+            {% include_block block %}
             {% endfor %}
           </div>
         </div>

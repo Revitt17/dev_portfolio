@@ -1,22 +1,22 @@
 {% load wagtailimages_tags %}
 
 <!-- Contact Section -->
-{% image page.contact_bg_img fill-1500x1000 as bg_image %}
-<section id="contact" class="contact-mf bg-image py-5" style="background-image: url('{{ bg_image.url }}')">
-  <div class="overlay-mf"></div>
+{% image page.contact_bg_img fill-1500x1000 as contact_bg_image %}
+<section id="contact" class="contact-mf contact-bg-image bg-image py-5" style="background-image: url('{{ contact_bg_image.url }}')">
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.548)"></div>
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="contact-mf">
-          <div id="contact" class="box-shadow-full">
+          <div class="contact-box-shadow-full">
             <div class="row">
               <div class="col-md-6">
-                <div class="title-box-2 pt-4 pt-md-0">
-                  <h5 class="title-left">{{ page.contact_get_in_touch }}</h5>
+                <div class="mb-5 pt-4 pt-md-0">
+                  <h5 class="contact-title-left">{{ page.contact_get_in_touch }}</h5>
                 </div>
-                <div class="more-info">
-                  <p class="lead">{{ page.contact_paragrapher }}</p><br>
-                  <ul class="list-unstyled mb-0">
+                <div>
+                  <p>{{ page.contact_paragrapher }}</p><br>
+                  <ul>
                     <li><i class="fas fa-map-marker-alt fa text-dark">&nbsp; {{ page.contact_address }}</i></li><br>
                     <li><i class="fas fa-phone fa text-dark">&nbsp; {{ page.contact_phone }}</i></li><br>
                     <li><i class="fas fa-envelope fa text-dark">&nbsp; {{ page.contact_email }}</i></li><br><br><br>
@@ -24,8 +24,8 @@
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="title-box-2">
-                  <h5 class="title-left">{{ page.contact_send_a_message }}</h5>
+                <div class="mb-5">
+                  <h5 class="contact-title-left">{{ page.contact_send_a_message }}</h5>
                 </div>
                 <div>
 

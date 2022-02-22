@@ -1,22 +1,22 @@
 {% load static wagtailimages_tags %}
 
 <!-- About Section -->
-<section id="about" class="about-mf sect-pt4 route">
+<section id="about" class="about-mf sect-pt4 route mt-5 pt-5">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <div class="box-shadow-full">
+        <div class="about-box-shadow-full">
           <div class="row">
-            <div class="col-md-4 px-5">
+            <div class="col-lg-4 px-5">
               <div class="pb-5">
                 {% image page.about_profile_image fill-1000x1500 as profile_image %}
                 <img src="{{ profile_image.url }}" class="img-fluid shadow-1-strong rounded-0" alt="">
               </div>
             </div>
-            <div class="col-md-8 ps-5">
+            <div class="col-lg-8 ps-5">
               <div class="about-me pt-4 pt-md-0">
-                <div class="title-box-2">
-                  <h5 class="title-left">
+                <div class="mb-5">
+                  <h5 class="about-title-left">
                     {{ page.about_title }}
                   </h5>
                 </div>
@@ -42,8 +42,8 @@
   </div>
   <!-- Skills SubSection -->
   <div class="container py-5">
-    <div class="title-box-2 text-center">
-      <h5 class="title-center">
+    <div class="about-title-box text-center">
+      <h5 class="skills-title-center mb-5">
         {{ page.about_title_skills_subsection }}
       </h5>
     </div>

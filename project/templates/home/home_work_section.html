@@ -1,48 +1,43 @@
 {% load wagtailimages_tags %}
 
 <!-- Work Section -->
-<section id="work" class="portfolio-mf sect-pt4 route pb-5 mb-5">
+<section id="work" class="py-5 my-5 bg-light">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="title-box text-center">
-          <h3 class="title-a">
+        <div class="text-center pb-5 mb-2">
+          <h3 class="work-title-a">
             {{ page.work_title }}
           </h3>
           {% if page.work_lead_text %}
-          <p class="subtitle-a">
+          <p class="work-subtitle-a">
             {{ page.work_lead_text }}
           </p>
           {% endif %}
-          <div class="line-mf"></div>
+          <div class="work-line-mf"></div>
         </div>
       </div>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
       {% for project in portfolio %}
-      <div class="col-md-4">
-        <div class="work-box">
-          <div class="bg-image hover-zoom hover-overlay ripple">
-            {% image project.cover_image_project fill-1200x600 as bg %}
-            <img src="{{ bg.url }}" class="img-fluid" />
+      <div class="col-lg-4 col-md-6">
+        <div class="card rounded-0">
+          <div class="bg-image hover-zoom hover-overlay ripple rounded-0" data-mdb-ripple-color="dark">
+            {% image project.cover_image_project fill-1200x600 as bg_work %}
+            <img src="{{ bg_work.url }}" class="img-fluid" />
             <a href="{{ project.url }}">
-              <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
-                <div class="d-flex justify-content-center align-items-center h-100"></div>
-              </div>
+              <div class="mask" style="background-color: rgba(0, 0, 0, 0.575)"></div>
             </a>
           </div>
-          <div class="work-content">
+          <div class="card-body work-content">
             <div class="row">
               <div class="col-md-8">
-                <h2 class="w-title">{{ project.title }}</h2>
-                <div class="w-more">
-                  <span class="w-date">{{ project.project_date }}</span>
-                </div>
+                <h5 class="card-title">{{ project.title }}</h5>
+                <p class="card-text">{{ project.project_date }}</p>
               </div>
               <div class="col-md-4">
-                <div class="w-like">
-                  <a href="{{ project.url }}"> <span><i class="far fa-plus-square"></i></span></a>
+                <div class="w-like"><a href="{{ project.url }}"> <span><i class="far fa-plus-square"></i></span></a>
                 </div>
               </div>
             </div>

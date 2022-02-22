@@ -2,23 +2,25 @@
 
 <!-- Hero Section -->
 {% image page.hero_background_image fill-1600x800 as bg_img %}
-<div id="hero" class="hero route bg-image" style="background-image: url('{{ bg_img.url }}')">
-  <div class="overlay-itro"></div>
-  <div class="hero-content display-table">
-    <div class="table-cell">
+<div id="hero" class="hero hero-bg-image bg-image" style="background-image: url('{{ bg_img.url }}')">
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)"></div>
+  <div class="hero-content hero-display-table">
+    <div class="hero-table-cell">
       <div class="container">
         <h1 class="hero-title mb-4">{{ page.hero_lead_text }}</h1>
         <p class="hero-subtitle"><span class="typed" data-typed-items="{{ page.hero_typed_text }}"></span></p>
-        <div class="social-links">
-          {% if page.hero_github_link %}
-          <a href="{{ page.hero_github_link }}"><i class="fab fa-github"></i></i></a>
-          {% endif %}
-          {% if page.hero_linkedin_link %}
-          <a href="{{ page.hero_linkedin_link }}"><i class="fab fa-linkedin"></i></i></a>
-          {% endif %}
-        </div>
+        
+      </div>
+      <div class="hero-social-links">
+        {% if page.hero_github_link %}
+        <a href="{{ page.hero_github_link }}"><i class="fab fa-github"></i></i></a>
+        {% endif %}
+        {% if page.hero_linkedin_link %}
+        <a href="{{ page.hero_linkedin_link }}"><i class="fab fa-linkedin"></i></i></a>
+        {% endif %}
       </div>
     </div>
+    
   </div>
 </div>
 <!-- END Hero Section -->

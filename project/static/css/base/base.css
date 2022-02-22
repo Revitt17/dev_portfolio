@@ -1,6 +1,5 @@
 /* BASE */
 
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -8,12 +7,7 @@ body {
   background-color: #f5f5f5;
   color: #4e4e4e;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   color: #1e1e1e;
 }
 a {
@@ -96,49 +90,6 @@ a:hover {
   100% {
     transform: rotate(360deg);
   }
-}
-
-/*------/ Button /------*/
-.button {
-  display: inline-block;
-  padding: 0.3rem 0.6rem;
-  text-align: center;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  font-size: 1rem;
-  border-radius: 0.3rem;
-  border: 1px solid transparent;
-  transition: all 500ms ease;
-  cursor: pointer;
-}
-.button:focus {
-  outline: 0;
-}
-.button:hover {
-  background-color: #00000049;
-  color: #fff;
-  transition: all 500ms ease;
-}
-.button-a {
-  text-decoration: none;
-  background-color: #0000003d;
-  color: #fff;
-  border-color: #cde1f8;
-}
-.button-big {
-  padding: 0.9rem 2.3rem;
-  font-size: 1.2rem;
-}
-.button-rouded {
-  border-radius: 5rem;
-}
-.btn-lg {
-  padding: 0.5rem 1rem;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  border-radius: 0.3rem;
 }
 
 /*--------------------------------------------------------------

@@ -5,13 +5,14 @@ from modelcluster.fields import ParentalKey
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel
 from portfolio.models import Portfolio
+from blog.models import Blog
 
 
 class HomePage(Page):
 
     template = "home/home_page.html"
     parent_page_types = ["wagtailcore.Page"]
-    subpage_types = ["portfolio.Portfolio"]
+    subpage_types = ["portfolio.Portfolio", "blog.Blog"]
     max_count = 1
     
     # Hero Section
@@ -187,17 +188,21 @@ class HomePage(Page):
         else:
             form = ContactForm()
 
-        context1 = {'page': self, 'form': form}
+        context_contact = {'page': self, 'form': form}
         """
         Get context from 'Portfolio' necessary for 'home_work_section'.
         """
-        context2 = super().get_context(request, *args, **kwargs)
-        context2['portfolio'] = Portfolio.objects.live().public()   
-        
+        context_portfolio = super().get_context(request, *args, **kwargs)
+        context_portfolio['portfolio'] = Portfolio.objects.live().public()  
+        """
+        Get context from 'Blog' necessary for 'home_blog_section'.
+        """ 
+        context_blog = super().get_context(request, *args, **kwargs)
+        context_blog['blog'] = Blog.objects.live().public() 
         """
         Merge context and view all.
         """
-        context = context1 | context2
+        context = context_contact | context_portfolio | context_blog
         return render(request, 'home/home_page.html', context)
 
     

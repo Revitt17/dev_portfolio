@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/blog/blog.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Banner Section -->
+{% include "blog/blog_banner_section.html" %}
+<!-- END Banner Section -->
+
+<main id="main">
+
+  <!-- Post Section -->
+  {% include "blog/blog_post_section.html" %}
+  <!-- END Post Section -->
+
+</main>
+{% endblock content %}
