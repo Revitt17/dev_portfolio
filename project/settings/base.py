@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'wagtail.contrib.modeladmin', 
     # Add for use "site_settings"
     'wagtail.contrib.settings', 
+    # Add for use sitemap
+    'wagtail.contrib.sitemaps',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
@@ -51,6 +53,8 @@ INSTALLED_APPS = [
     'taggit',
     'wagtailcodeblock',
 
+    # Add for use sitemap
+    'django.contrib.sitemaps',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
