@@ -17,7 +17,8 @@
             <h3>{{ settings.site_settings.PortfolioSettings.project_info }}</h3>
             <ul>
               <li>
-                <strong>{{ settings.site_settings.PortfolioSettings.project_info_category }}</strong>: {{ page.category }}
+                <strong>{{ settings.site_settings.PortfolioSettings.project_info_category }}</strong>:
+                {{ page.category }}
               </li>
               {% if settings.site_settings.PortfolioSettings.project_info_client %}
               <li>
@@ -25,11 +26,11 @@
               </li>
               {% endif %}
               <li>
-                <strong>{{ settings.site_settings.PortfolioSettings.project_info_project_date }}</strong>: 
+                <strong>{{ settings.site_settings.PortfolioSettings.project_info_project_date }}</strong>:
                 {{ page.project_date }}</li>
               {% if settings.site_settings.PortfolioSettings.project_info_project_url %}
               <li>
-                <strong>{{ settings.site_settings.PortfolioSettings.project_info_project_url }}</strong>: 
+                <strong>{{ settings.site_settings.PortfolioSettings.project_info_project_url }}</strong>:
                 <a href="{{ page.project_url }}">{{ page.project_url }}</a>
               </li>
               {% endif %}
@@ -37,14 +38,12 @@
             <hr>
             <div class="d-grid gap-2 d-md-block">
               {% if settings.site_settings.PortfolioSettings.project_info_website_button %}
-              <a href="{{ settings.site_settings.PortfolioSettings.project_info_website_button }}"
-                class="btn btn-outline-primary rounded-1 mb-1">
-                {{ page.website_button }}</a>
+              <a href="{{ page.website_button_url }}" class="btn btn-outline-primary rounded-1 mb-1">
+                {{ settings.site_settings.PortfolioSettings.project_info_website_button }}</a>
               {% endif %}
               {% if settings.site_settings.PortfolioSettings.project_info_github_button %}
-              <a href="{{ settings.site_settings.PortfolioSettings.project_info_github_button }}"
-                class="btn btn-outline-dark rounded-1 mb-1">
-                {{ page.github_button }}</a>
+              <a href="{{ page.github_button_url }}" class="btn btn-outline-dark rounded-1 mb-1">
+                {{ settings.site_settings.PortfolioSettings.project_info_github_button }}</a>
               {% endif %}
             </div>
           </div>

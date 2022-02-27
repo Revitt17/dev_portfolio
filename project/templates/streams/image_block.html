@@ -1,0 +1,21 @@
+{% load static wagtailimages_tags %}
+
+<!-- Image Block -->
+<div class="my-4">
+  <div class="row">
+    <div class="col-sm-12">
+      <picture>
+        {% image self.image fill-1200x800 as img %}
+        <img src="{{ img.url }}" alt="{{ img.alt }}" style='width: 100%; height: auto;'>
+      </picture>
+      <div class="text-center mt-1">
+        {% if self.text %}
+        <p class="font-monospace fst-italic">
+          {{ self.text }}
+        </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Image Block -->

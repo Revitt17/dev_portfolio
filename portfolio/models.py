@@ -57,8 +57,9 @@ class Portfolio(Page):
         max_length=50,
     )
     body = StreamField([
-        ("header", blocks.HeaderBlock()),
-        ("paragraph", blocks.ParagrapherBlock()),
+        ("title", blocks.TitleBlock()),
+        ("text", blocks.TextBlock()),
+        ("image", blocks.ImageBlock()),
         ("code", CodeBlock(label=("Code"))),
     ], null=True, blank=False)
     

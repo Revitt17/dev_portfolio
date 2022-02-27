@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import render
 from wagtail.core.models import Page
 from wagtail.core.fields import StreamField
 from wagtail.admin.edit_handlers import (
@@ -41,8 +42,12 @@ class Blog(Page):
         null=True,
         max_length=50,
     )
-    
-    
+    body = StreamField([
+        ("title", blocks.TitleBlock()),
+        ("text", blocks.TextBlock()),
+        ("image", blocks.ImageBlock()),
+        ("code", CodeBlock(label=("Code"))),
+    ], null=True, blank=False)
     
     content_panels = Page.content_panels + [
         MultiFieldPanel([
@@ -53,5 +58,11 @@ class Blog(Page):
             FieldPanel('post_date'),
             FieldPanel('post_author'),
         ], heading="Post Section"),
+        StreamFieldPanel("body")
     ]
 
+    def serve(self, request, *args, **kwargs):
+
+        context = super().get_context(request, *args, **kwargs)
+        context['blog'] = Blog.objects.live().public() 
+        return render(request, 'blog/blog_page.html', context)
