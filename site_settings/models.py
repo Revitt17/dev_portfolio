@@ -26,6 +26,11 @@ class NavbarSettings(BaseSetting):
         blank=False,
         null=True,
     )
+    blog = models.CharField(
+        max_length=50,
+        blank=False,
+        null=True,
+    )
     contact = models.CharField(
         max_length=50,
         blank=False,
@@ -37,6 +42,7 @@ class NavbarSettings(BaseSetting):
         FieldPanel("home"),
         FieldPanel("about"),
         FieldPanel("work"),
+        FieldPanel("blog"),
         FieldPanel("contact"),
     ]
 
@@ -44,14 +50,20 @@ class NavbarSettings(BaseSetting):
 @register_setting
 class FooterSettings(BaseSetting):
 
-    footer = models.CharField(
+    copyright = models.CharField(
+        max_length=50,
+        blank=False,
+        null=True,
+    )
+    year = models.CharField(
         max_length=50,
         blank=False,
         null=True,
     )
 
     panels = [
-        FieldPanel("footer"),
+        FieldPanel("copyright"),
+        FieldPanel("year"),
     ]
 
 

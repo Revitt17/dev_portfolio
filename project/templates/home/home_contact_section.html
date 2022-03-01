@@ -1,61 +1,58 @@
 {% load wagtailimages_tags %}
 
 <!-- Contact Section -->
-{% image page.contact_bg_img fill-1500x1000 as contact_bg_image %}
-<section id="contact" class="contact-mf contact-bg-image bg-image py-5" style="background-image: url('{{ contact_bg_image.url }}')">
-  <div class="mask" style="background-color: rgba(0, 0, 0, 0.548)"></div>
-  <div class="container">
-    <div class="row">
+{% image page.contact_bg_img fill-1200x800 as contact_bg_image %}
+<section class="py-5 mt-5 hv-100" style="background-image: url('{{ contact_bg_image.url }}')">
+  <div class="container pt-4">
+    <div id="contact" class="row pt-5">
       <div class="col-sm-12">
-        <div class="contact-mf">
-          <div class="contact-box-shadow-full">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="mb-5 pt-4 pt-md-0">
-                  <h5 class="contact-title-left">{{ page.contact_get_in_touch }}</h5>
-                </div>
-                <div>
-                  <p>{{ page.contact_paragrapher }}</p><br>
-                  <ul>
-                    <li><i class="fas fa-map-marker-alt fa text-dark">&nbsp; {{ page.contact_address }}</i></li><br>
-                    <li><i class="fas fa-phone fa text-dark">&nbsp; {{ page.contact_phone }}</i></li><br>
-                    <li><i class="fas fa-envelope fa text-dark">&nbsp; {{ page.contact_email }}</i></li><br><br><br>
-                  </ul>
-                </div>
+        <div class="contact-box-shadow-full pt-5">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-5 pt-4 pt-md-0">
+                <h5 class="contact-title-left">{{ page.contact_get_in_touch }}</h5>
               </div>
-              <div class="col-md-6">
-                <div class="mb-5">
-                  <h5 class="contact-title-left">{{ page.contact_send_a_message }}</h5>
-                </div>
-                <div>
+              <div>
+                <p>{{ page.contact_paragrapher }}</p><br>
+                <ul>
+                  <li><i class="fas fa-map-marker-alt fa text-dark">&nbsp; {{ page.contact_address }}</i></li><br>
+                  <li><i class="fas fa-phone fa text-dark">&nbsp; {{ page.contact_phone }}</i></li><br>
+                  <li><i class="fas fa-envelope fa text-dark">&nbsp; {{ page.contact_email }}</i></li><br><br><br>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-5">
+                <h5 class="contact-title-left">{{ page.contact_send_a_message }}</h5>
+              </div>
+              <div>
 
-                  <form action="" method="post" class="contact-form" novalidate>
-                    {% csrf_token %}
-                    <div class="row">
-                      {% for non_field_error in form.non_field.errors %}
-                      <p class="help is-danger">{{ non_field_error }}</p>
-                      {% endfor %}
-                      {% for field in form %}
-                      <div class="col-md-12 mb-3">
-                        <div class="form-group">
-                          {{ field }}
-                        </div>
-                        {% if field.help.text %}
-                        <p class="help">{{ field.help.text }}</p>
-                        {% endif %}
-                        {% for error in field.errors %}
-                        <p class="help is-danger">{{ error }}</p>
-                        {% endfor %}
+                <form action="" method="post" class="contact-form">
+                  {% csrf_token %}
+                  <div class="row">
+                    {% for non_field_error in form.non_field.errors %}
+                    <p class="help is-danger">{{ non_field_error }}</p>
+                    {% endfor %}
+                    {% for field in form %}
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                        {{ field }}
                       </div>
+                      {% if field.help.text %}
+                      <p class="help">{{ field.help.text }}</p>
+                      {% endif %}
+                      {% for error in field.errors %}
+                      <p class="help is-danger">{{ error }}</p>
                       {% endfor %}
-                      <div class="col-md-12 text-center">
-                        <input type="submit" class="button btn btn-dark mb-5 mb-md-0 rounded-1"
-                          value="{{ page.contact_send_button}}">
-                      </div>
                     </div>
-                  </form>
+                    {% endfor %}
+                    <div class="col-md-12 text-center">
+                      <input type="submit" class="button btn btn-dark mb-5 mb-md-0 rounded-1"
+                        value="{{ page.contact_send_button}}">
+                    </div>
+                  </div>
+                </form>
 
-                </div>
               </div>
             </div>
           </div>

@@ -300,12 +300,7 @@
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
-.contact-bg-image {
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center center;
-}
+
 .contact-box-shadow-full {
   padding: 3rem 1.25rem;
   position: relative;
@@ -333,15 +328,6 @@
 }
 .footer-paralax {
   padding: 4rem 0 0 0;
-}
-.contact-mf {
-  padding-top: 5rem;
-}
-@media (min-width: 767px) {
-  .contact-mf .box-pl2 {
-    padding-top: 3rem;
-    padding-left: 0rem;
-  }
 }
 .contact-form .error-message {
   display: none;
@@ -381,9 +367,6 @@
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
-}
-.contact-form input:focus, .contact-form textarea:focus {
-  border-color: #000000;
 }
 .contact-form input {
   padding: 10px 15px;

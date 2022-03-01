@@ -9,8 +9,9 @@ venv/
 # Database
 db.sqlite3
 
-# Media
+# Img
 media/
+project/static/img
 
 # Settings
 project/settings/local.py

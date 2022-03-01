@@ -5,12 +5,17 @@
     <!-- Uncomment below if you prefer to use an image logo -->
     <!-- <a href="/" class="logo"><img src="" alt="" class="img-fluid"></a>-->
     <nav id="navbar" class="navbar">
-      <ul>
-        <li><a class="nav-link scrollto active" href="/#hero">{{ settings.site_settings.NavbarSettings.home }}</a></li>
-        <li><a class="nav-link scrollto" href="/#about">{{ settings.site_settings.NavbarSettings.about }}</a></li>
-        <li><a class="nav-link scrollto " href="/#work">{{ settings.site_settings.NavbarSettings.work }}</a></li>
-        <li><a class="nav-link scrollto " href="/#blog">BLOG</a></li>
-        <li><a class="nav-link scrollto" href="/#contact">{{ settings.site_settings.NavbarSettings.contact }}</a></li>
+      <ul navbar-nav me-auto mb-2 mb-lg-0>
+        <li class="nav-item"><a class="nav-link scrollto"
+            href="/#hero">{{ settings.site_settings.NavbarSettings.home }}</a></li>
+        <li class="nav-item"><a class="nav-link scrollto"
+            href="/#about">{{ settings.site_settings.NavbarSettings.about }}</a></li>
+        <li class="nav-item"><a class="nav-link scrollto"
+            href="/#work">{{ settings.site_settings.NavbarSettings.work }}</a></li>
+        <li class="nav-item"><a class="nav-link scrollto"
+            href="/#blog">{{ settings.site_settings.NavbarSettings.blog }}</a></li>
+        <li class="nav-item"><a class="nav-link scrollto"
+            href="/#contact">{{ settings.site_settings.NavbarSettings.contact }}</a></li>
       </ul>
       <i class="fas fa-bars mobile-nav-toggle"></i>
     </nav>
