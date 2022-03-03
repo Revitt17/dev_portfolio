@@ -43,7 +43,7 @@ a:hover {
   line-height: 0;
 }
 .back-to-top:hover {
-  background: #6f6f70;
+  background: rgb(0, 0, 0);
   color: #fff;
 }
 .back-to-top.active {

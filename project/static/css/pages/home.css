@@ -71,6 +71,11 @@
   background-size: cover;
   background-position: center center;
 }
+@media (max-width: 1024px) {
+  .hero-bg-image {
+    background-attachment: scroll;
+  }
+}
 .hero-display-table {
   width: 100%;
   height: 100%;
@@ -312,6 +317,11 @@
 @media (min-width: 768px),(max-height: 450px) {
   .contact-box-shadow-full {
     padding: 3rem;
+  }
+}
+@media (max-width: 1024px) {
+  .contact-bg-image {
+    background-attachment: scroll;
   }
 }
 .contact-title-left {

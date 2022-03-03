@@ -4,14 +4,14 @@
 __pycache__
 
 # Env
-venv/
+venv_w/
+venv_linux/
 
 # Database
 db.sqlite3
 
 # Img
 media/
-project/static/img
 
 # Settings
 project/settings/local.py

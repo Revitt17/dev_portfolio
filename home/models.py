@@ -202,7 +202,8 @@ class HomePage(Page):
         """
         Merge context and view all.
         """
-        context = context_contact | context_portfolio | context_blog
+        #context = context_contact | context_portfolio | context_blog
+        context = {**context_contact, **context_portfolio, **context_blog}
         return render(request, 'home/home_page.html', context)
 
     

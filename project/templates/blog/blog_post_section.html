@@ -21,25 +21,26 @@
       <div class="col-lg-4 col-md-12">
         <p class="font-weight-bold text-center">{{ settings.site_settings.BlogSettings.post_related_articles }}
         </p>
-
-        {% for post in blog %}
-        {% if post.title != page.title %}
-        <div class="bg-image ripple mb-5" data-mdb-ripple-color="dark">
-          {% image post.post_image fill-1500x1000 as post_image %}
-          <img src="{{ post_image.url }}" class="w-100" />
-          <a href="{{ post.url }}">
-            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
-              <div class="d-flex justify-content-center align-items-center h-100">
-                <h3 class="text-white">{{ post.title }}</h3>
+        <div class="container">
+          {% for post in blog %}
+          {% if post.title != page.title %}
+          <div class="bg-image ripple mb-5" data-mdb-ripple-color="dark">
+            {% image post.post_image fill-1500x1000 as post_image %}
+            <img src="{{ post_image.url }}" class="w-100" />
+            <a href="{{ post.url }}">
+              <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                  <h3 class="text-white">{{ post.title }}</h3>
+                </div>
               </div>
-            </div>
-            <div class="hover-overlay">
-              <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
-            </div>
-          </a>
+              <div class="hover-overlay">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+              </div>
+            </a>
+          </div>
+          {% endif %}
+          {% endfor %}
         </div>
-        {% endif %}
-        {% endfor %}
 
       </div>
     </div>
