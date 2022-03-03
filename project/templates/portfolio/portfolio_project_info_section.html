@@ -20,7 +20,7 @@
                 <strong>{{ settings.site_settings.PortfolioSettings.project_info_category }}</strong>:
                 {{ page.category }}
               </li>
-              {% if settings.site_settings.PortfolioSettings.project_info_client %}
+              {% if page.client %}
               <li>
                 <strong>{{ settings.site_settings.PortfolioSettings.project_info_client }}</strong>: {{ page.client }}
               </li>
@@ -28,7 +28,7 @@
               <li>
                 <strong>{{ settings.site_settings.PortfolioSettings.project_info_project_date }}</strong>:
                 {{ page.project_date }}</li>
-              {% if settings.site_settings.PortfolioSettings.project_info_project_url %}
+              {% if page.project_url %}
               <li>
                 <strong>{{ settings.site_settings.PortfolioSettings.project_info_project_url }}</strong>:
                 <a href="{{ page.project_url }}">{{ page.project_url }}</a>

@@ -319,9 +319,16 @@
     padding: 3rem;
   }
 }
+.contact-bg-image {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+}
 @media (max-width: 1024px) {
   .contact-bg-image {
     background-attachment: scroll;
+    background-position: left center;
   }
 }
 .contact-title-left {
