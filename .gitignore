@@ -4,8 +4,7 @@
 __pycache__
 
 # Env
-venv_w/
-venv_linux/
+venv1
 
 # Database
 db.sqlite3
