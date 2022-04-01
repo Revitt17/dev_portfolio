@@ -46,20 +46,21 @@ class Portfolio(Page):
     )
     project_url = models.URLField(
         blank=True,
-        max_length=50,
+        max_length=500,
     )
     website_button_url = models.URLField(
         blank=True,
-        max_length=50,
+        max_length=500,
     )
     github_button_url = models.URLField(
         blank=True,
-        max_length=50,
+        max_length=500,
     )
     body = StreamField([
         ("title", blocks.TitleBlock()),
         ("text", blocks.TextBlock()),
         ("image", blocks.ImageBlock()),
+        ("iframe", blocks.FrameBlock()),
         ("code", CodeBlock(label=("Code"))),
     ], null=True, blank=False)
     

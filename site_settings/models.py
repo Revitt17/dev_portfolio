@@ -55,15 +55,9 @@ class FooterSettings(BaseSetting):
         blank=False,
         null=True,
     )
-    year = models.CharField(
-        max_length=50,
-        blank=False,
-        null=True,
-    )
 
     panels = [
         FieldPanel("copyright"),
-        FieldPanel("year"),
     ]
 
 
@@ -161,3 +155,4 @@ class BlogSettings(BaseSetting):
         FieldPanel("post_by"),
         FieldPanel("post_related_articles"),
     ]
+    

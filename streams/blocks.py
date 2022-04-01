@@ -20,7 +20,7 @@ class TextBlock(blocks.StructBlock):
     text = blocks.RichTextBlock(
         required=True,
         features=['h1', 'h2', 'h3', 'h4', 'h5', 'bold', 'italic', 'ol', 'ul', \
-            'hr', 'link', 'code', 'blockquote']
+            'hr', 'link', 'code', 'blockquote', 'embed']
     )
 
     class Meta:
@@ -43,5 +43,40 @@ class ImageBlock(blocks.StructBlock):
         label = "Image"
 
 
+class FrameBlock(blocks.StructBlock):
 
+    src = blocks.URLBlock(
+        required=True,
+        blank=False,
+        max_length=500,
+    )
+    width = blocks.CharBlock(
+        required=True,
+        blank=False,
+        max_length=500,
+    )
+    height = blocks.CharBlock(
+        required=True,
+        blank=False,
+        max_length=500,
+    )
+    frameborder = blocks.CharBlock(
+        required=True,
+        blank=False,
+        max_length=500,
+    )
+    marginwidth = blocks.CharBlock(
+        required=True,
+        blank=False,
+        max_length=500,
+    )
+    marginheight = blocks.CharBlock(
+        required=True,
+        blank=False,
+        max_length=500,
+    )
 
+    class Meta:
+        template = "streams/iframe_block.html"
+        icon = "edit"
+        label = "iFrame"
