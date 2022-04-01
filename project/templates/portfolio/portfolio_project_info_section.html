@@ -37,11 +37,11 @@
             </ul>
             <hr>
             <div class="d-grid gap-2 d-md-block">
-              {% if settings.site_settings.PortfolioSettings.project_info_website_button %}
+              {% if page.website_button_url %}
               <a href="{{ page.website_button_url }}" class="btn btn-outline-primary rounded-1 mb-1">
                 {{ settings.site_settings.PortfolioSettings.project_info_website_button }}</a>
               {% endif %}
-              {% if settings.site_settings.PortfolioSettings.project_info_github_button %}
+              {% if page.github_button_url %}
               <a href="{{ page.github_button_url }}" class="btn btn-outline-dark rounded-1 mb-1">
                 {{ settings.site_settings.PortfolioSettings.project_info_github_button }}</a>
               {% endif %}
